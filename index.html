@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harmain Link — Umrah & Travel (Easy Booking)</title>
+  <meta name="description" content="Affordable Umrah packages for young Muslims. Easy booking for April 2–12, 2026. Contact: Talal Aslam 336-989-7040" />
+  <style>
+    :root{
+      --bg:#071a14;
+      --card:#0e2b22;
+      --card2:#0b221b;
+      --text:#e9f7f1;
+      --muted:#b9d6cb;
+      --gold:#d6b25e;
+      --gold2:#b98e2e;
+      --line: rgba(233,247,241,.12);
+      --ring: rgba(214,178,94,.45);
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+      --radius: 22px;
+      --radius2: 16px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(214,178,94,.22), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(23,139,104,.35), transparent 55%),
+        radial-gradient(900px 700px at 50% 110%, rgba(214,178,94,.18), transparent 55%),
+        linear-gradient(180deg, #04110d 0%, var(--bg) 45%, #04110d 100%);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px 72px}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(4,17,13,.92), rgba(4,17,13,.68));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:12px 18px; max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 220px;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background: radial-gradient(circle at 30% 20%, rgba(214,178,94,.9), rgba(214,178,94,.25) 40%, rgba(23,139,104,.45) 72%, rgba(14,43,34,.25));
+      border:1px solid rgba(214,178,94,.35);
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+      position:relative; overflow:hidden;
+    }
+    .mark:before{
+      content:"";
+      position:absolute; inset:-60%;
+      background: conic-gradient(from 180deg, rgba(214,178,94,.0), rgba(214,178,94,.55), rgba(214,178,94,.0));
+      transform: rotate(25deg);
+      opacity:.9;
+    }
+    .brand h1{font-size:14px; margin:0; letter-spacing:.12em; text-transform:uppercase}
+    .brand small{display:block; color:var(--muted); letter-spacing:.06em}
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      padding:10px 12px; border-radius:12px; color:var(--muted);
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{border-color:var(--line); color:var(--text); background: rgba(255,255,255,.03)}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      border-radius: 999px;
+      padding: 12px 16px;
+      border:1px solid rgba(214,178,94,.45);
+      background: linear-gradient(180deg, rgba(214,178,94,.24), rgba(214,178,94,.08));
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      font-weight: 700;
+      letter-spacing:.02em;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+    .btn.secondary{
+      border-color: rgba(233,247,241,.16);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:650;
+    }
+    .hero{
+      display:grid; grid-template-columns: 1.15fr .85fr;
+      gap: 18px; align-items:stretch;
+      padding: 26px 0 10px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(14,43,34,.82), rgba(11,34,27,.82));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card.pad{padding: 22px}
+    .glow{
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(214,178,94,.20), transparent 60%),
+                  radial-gradient(480px 220px at 95% 15%, rgba(23,139,104,.25), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .headline{
+      position:relative;
+      padding: 10px 10px 0 10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px; border-radius: 999px;
+      border:1px solid rgba(214,178,94,.38);
+      background: rgba(214,178,94,.10);
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size: 12px;
+    }
+    .headline h2{
+      margin: 14px 0 8px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    .headline p{margin: 0; color: var(--muted); font-size: 16px; max-width: 60ch}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px}
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
+    .pill{
+      border:1px solid rgba(233,247,241,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      border-radius:999px;
+      padding: 10px 12px;
+      font-size: 13px;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .kpi{
+      margin-top: 18px;
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .kpi .mini{
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      padding: 12px;
+    }
+    .mini strong{display:block; font-size: 18px}
+    .mini span{color: var(--muted); font-size: 12px}
+    /* Booking box */
+    .booking-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .booking-head h3{margin:0; font-size: 18px}
+    .booking-head small{color:var(--muted)}
+    .form{
+      margin-top: 14px;
+      display:grid; gap: 12px;
+    }
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap: 10px}
+    label{font-size: 12px; color: var(--muted); display:block; margin:0 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(233,247,241,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(214,178,94,.55);
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+    textarea{min-height: 92px; resize: vertical}
+    .hint{color: var(--muted); font-size: 12px}
+    .submitrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top: 4px}
+    .note{
+      border-top: 1px dashed rgba(233,247,241,.16);
+      margin-top: 14px; padding-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .section{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .section h3{margin:0 0 6px; font-size: 18px}
+    .grid3{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .feature{
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      min-height: 120px;
+    }
+    .feature b{display:block; margin-bottom: 6px}
+    .feature p{margin:0; color:var(--muted); font-size: 14px}
+    .packages{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+    .pkg{
+      padding: 18px;
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      position:relative; overflow:hidden;
+    }
+    .pkg .tag{
+      position:absolute; top:14px; right:14px;
+      font-size: 12px; color: var(--text);
+      padding: 7px 10px; border-radius:999px;
+      border:1px solid rgba(214,178,94,.40);
+      background: rgba(214,178,94,.12);
+    }
+    .pkg h4{margin: 0 0 6px; font-size: 18px}
+    .pkg .price{font-size: 26px; font-weight: 900; letter-spacing:-.02em}
+    .pkg .sub{color:var(--muted); font-size: 12px; margin-top: 2px}
+    .pkg ul{margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px}
+    .pkg li{margin: 6px 0}
+    .faq{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+    details{
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding: 14px 14px;
+    }
+    summary{cursor:pointer; font-weight: 800}
+    details p{color: var(--muted); margin: 10px 0 0}
+    footer{
+      margin-top: 26px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      font-size: 12px;
+    }
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(14,43,34,.96);
+      border: 1px solid rgba(233,247,241,.18);
+      padding: 12px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index: 99;
+      max-width: min(680px, calc(100vw - 24px));
+    }
+    .toast strong{color: var(--text)}
+    .toast span{color: var(--muted)}
+    .right-art{
+      position:absolute; inset:auto -140px -160px auto;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle at 35% 30%, rgba(214,178,94,.35), rgba(214,178,94,.10) 45%, rgba(23,139,104,.18) 72%, transparent);
+      filter: blur(2px);
+      opacity:.9;
+      pointer-events:none;
+      transform: rotate(12deg);
+    }
+    .sep{height:1px; background: var(--line); margin: 14px 0}
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr}
+      .headline h2{font-size: 40px}
+      .grid3, .packages{grid-template-columns: 1fr}
+      .faq{grid-template-columns: 1fr}
+      .kpi{grid-template-columns: 1fr}
+      .row{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand" aria-label="Harmain Link">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Harmain Link</h1>
+          <small>Umrah & Travel • Easy Booking</small>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="#packages">Packages</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn secondary" href="#book">Book</a>
+        <a class="btn" href="tel:+13369897040" aria-label="Call Talal Aslam">Call 336-989-7040</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero" id="home">
+      <div class="card pad">
+        <div class="glow"></div>
+        <div class="right-art" aria-hidden="true"></div>
+        <div class="headline">
+          <span class="badge">April 2–12, 2026 • Limited Spots</span>
+          <h2>Affordable Umrah for Young Muslims — without the hassle.</h2>
+          <p>
+            Harmain Link is built for ages <b>17–30</b>: clear pricing, group support, and a simple booking flow.
+            Reserve your spot, upload your details later, and travel with confidence.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#book">Start Booking</a>
+            <a class="btn secondary" href="#packages">View Packages</a>
+          </div>
+
+          <div class="pillrow" role="list" aria-label="Highlights">
+            <span class="pill" role="listitem">✅ Easy deposit + payment plan</span>
+            <span class="pill" role="listitem">🕋 Guided Umrah sessions</span>
+            <span class="pill" role="listitem">🧳 Group logistics handled</span>
+            <span class="pill" role="listitem">📱 WhatsApp-friendly updates</span>
+          </div>
+
+          <div class="kpi" aria-label="Key info">
+            <div class="mini">
+              <strong>Apr 2–12, 2026</strong>
+              <span>Trip dates</span>
+            </div>
+            <div class="mini">
+              <strong>USA → KSA</strong>
+              <span>Flights coordinated</span>
+            </div>
+            <div class="mini">
+              <strong>Talal Aslam</strong>
+              <span>Direct contact: 336-989-7040</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <b>Note:</b> This site is a ready-to-use template. To accept real payments, connect Stripe/PayPal and a booking backend (instructions in the ZIP).
+          </div>
+        </div>
+      </div>
+
+      <div class="card pad" id="book" aria-label="Booking card">
+        <div class="glow"></div>
+        <div class="booking-head">
+          <div>
+            <h3>Book your spot</h3>
+            <small>Fast checkout-style form (takes ~60 seconds)</small>
+          </div>
+          <div style="text-align:right">
+            <small style="color:var(--muted)">Trip</small><br/>
+            <b>Apr 2–12, 2026</b>
+          </div>
+        </div>
+
+        <form class="form" id="bookingForm" autocomplete="on">
+          <div class="row">
+            <div>
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="13" max="90" placeholder="e.g., 22" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="phone">Phone (WhatsApp preferred)</label>
+              <input id="phone" name="phone" inputmode="tel" placeholder="e.g., 336-989-7040" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="city">City + State</label>
+              <input id="city" name="city" placeholder="e.g., Greensboro, NC" required />
+            </div>
+            <div>
+              <label for="package">Choose a package</label>
+              <select id="package" name="package" required>
+                <option value="" selected disabled>Select…</option>
+                <option value="Essential">Essential — best value</option>
+                <option value="Comfort">Comfort — upgraded stay</option>
+                <option value="Elite">Elite — premium experience</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="deposit">Payment preference</label>
+              <select id="deposit" name="deposit" required>
+                <option value="" selected disabled>Select…</option>
+                <option value="Deposit">Pay deposit to reserve my spot</option>
+                <option value="Full">Pay in full</option>
+                <option value="Plan">Set up a payment plan</option>
+              </select>
+            </div>
+            <div>
+              <label for="passport">Do you have a passport valid 6+ months?</label>
+              <select id="passport" name="passport" required>
+                <option value="" selected disabled>Select…</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No (I’m working on it)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="notes">Notes (roommates, medical needs, questions)</label>
+            <textarea id="notes" name="notes" placeholder="Optional — write 'None' if nothing to add"></textarea>
+            <div class="hint">We’ll follow up with the full agreement, itinerary, and next steps.</div>
+          </div>
+
+          <div class="submitrow">
+            <button class="btn" type="submit">Request Booking</button>
+            <button class="btn secondary" type="button" id="copyBtn">Copy details for WhatsApp</button>
+          </div>
+
+          <div class="note">
+            By submitting, you consent to be contacted by Harmain Link regarding this trip. You’ll receive the full travel agreement to sign before departure.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>Packages (example pricing)</h3>
+        <p style="margin:0;color:var(--muted);max-width:75ch">
+          Replace these placeholders with your real package details. Keep the choices simple — it increases conversions.
+        </p>
+        <div class="sep"></div>
+
+        <div class="packages" role="list">
+          <div class="pkg" role="listitem">
+            <span class="tag">Best value</span>
+            <h4>Essential</h4>
+            <div class="price">$X,XXX</div>
+            <div class="sub">Solid hotels • group support • guided sessions</div>
+            <ul>
+              <li>Group transportation in KSA</li>
+              <li>Basic rooming (2–4 per room)</li>
+              <li>Daily check-ins + reminders</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Most popular</span>
+            <h4>Comfort</h4>
+            <div class="price">$X,XXX</div>
+            <div class="sub">Upgraded stay • more convenience</div>
+            <ul>
+              <li>Closer hotels or upgraded rooms</li>
+              <li>Streamlined group schedule</li>
+              <li>Extra guided sessions / Q&A</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Premium</span>
+            <h4>Elite</h4>
+            <div class="price">$X,XXX</div>
+            <div class="sub">Premium experience • max comfort</div>
+            <ul>
+              <li>Top-tier hotels (where available)</li>
+              <li>Priority group logistics</li>
+              <li>Concierge-level coordination</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+        <div class="hint">
+          Pro tip: show “starting from” prices if totals vary by departure city, rooming, or flight availability.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>How booking works</h3>
+        <div class="grid3" role="list">
+          <div class="feature" role="listitem">
+            <b>1) Reserve</b>
+            <p>Submit your booking request in under a minute. We confirm availability and next steps.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <b>2) Confirm</b>
+            <p>Pay deposit or set a plan. You’ll receive the trip agreement, checklist, and timeline.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <b>3) Travel</b>
+            <p>We coordinate the group flow, support you throughout, and keep the experience smooth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>FAQ</h3>
+        <div class="faq">
+          <details>
+            <summary>Can I book if I don’t have a passport yet?</summary>
+            <p>Yes — select “No (I’m working on it)” and we’ll share deadlines and help you stay on track.</p>
+          </details>
+          <details>
+            <summary>Is this tailored for ages 17–30 only?</summary>
+            <p>That’s our focus for group dynamic, but you can still request a booking. We’ll confirm fit and logistics.</p>
+          </details>
+          <details>
+            <summary>How do roommates work?</summary>
+            <p>Tell us your preference in the notes. We try to match roommates by preference and availability.</p>
+          </details>
+          <details>
+            <summary>What happens after I submit this form?</summary>
+            <p>We contact you (WhatsApp/phone/email) to confirm package details, payments, and send the agreement to sign.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>Contact</h3>
+        <p style="margin:0;color:var(--muted)">
+          Questions? Reach out directly:
+        </p>
+        <div class="sep"></div>
+        <div class="grid3">
+          <div class="feature">
+            <b>Call / Text</b>
+            <p><a href="tel:+13369897040"><b style="color:var(--text)">336-989-7040</b></a></p>
+            <p class="hint" style="margin:0">Talal Aslam</p>
+          </div>
+          <div class="feature">
+            <b>WhatsApp</b>
+            <p class="hint">Add the number above and message “Umrah April 2026”.</p>
+          </div>
+          <div class="feature">
+            <b>Next steps</b>
+            <p class="hint">After booking, we send: agreement, checklist, passport/visa timeline, and itinerary draft.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Harmain Link • Umrah & Travel</div>
+      <div>Trip dates: <b style="color:var(--text)">April 2–12, 2026</b> • Contact: <b style="color:var(--text)">Talal Aslam (336-989-7040)</b></div>
+      <div><a href="#book">Book</a> • <a href="#packages">Packages</a> • <a href="#faq">FAQ</a></div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <strong id="toastTitle">Saved.</strong> <span id="toastMsg">We’ll be in touch shortly.</span>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function showToast(title, msg){
+      $("toastTitle").textContent = title;
+      $("toastMsg").textContent = msg;
+      const t = $("toast");
+      t.style.display = "block";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{ t.style.display="none"; }, 4200);
+    }
+
+    // Set year
+    $("year").textContent = new Date().getFullYear();
+
+    // Simple local “booking request” behavior:
+    // - validates
+    // - generates a WhatsApp-friendly message
+    // - copies to clipboard as a fallback
+    const form = $("bookingForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      // Basic age guard (helps your target segment)
+      const age = parseInt(data.age || "0", 10);
+      if (Number.isFinite(age) && age < 17){
+        showToast("Heads up", "This trip is tailored for ages 17–30. We can still review your request.");
+      }
+
+      const message =
+`Harmain Link Booking Request (Apr 2–12, 2026)
+Name: ${data.fullName}
+Age: ${data.age}
+Phone: ${data.phone}
+Email: ${data.email}
+City/State: ${data.city}
+Package: ${data.package}
+Payment: ${data.deposit}
+Passport 6+ months: ${data.passport}
+Notes: ${data.notes || "None"}
+
+Contact: Talal Aslam — 336-989-7040`;
+
+      try{
+        await navigator.clipboard.writeText(message);
+        showToast("Request prepared", "Copied booking details. Send via WhatsApp/Text if needed.");
+      }catch(err){
+        showToast("Request prepared", "Couldn’t auto-copy. Use the button to copy details.");
+      }
+
+      // Clear optional notes only (keeps form convenient if they want to tweak)
+      $("notes").value = "";
+    });
+
+    // Copy button
+    $("copyBtn").addEventListener("click", async () => {
+      const data = Object.fromEntries(new FormData(form).entries());
+      const message =
+`Harmain Link Booking Request (Apr 2–12, 2026)
+Name: ${data.fullName || "-"}
+Age: ${data.age || "-"}
+Phone: ${data.phone || "-"}
+Email: ${data.email || "-"}
+City/State: ${data.city || "-"}
+Package: ${data.package || "-"}
+Payment: ${data.deposit || "-"}
+Passport 6+ months: ${data.passport || "-"}
+Notes: ${data.notes || "None"}
+
+Contact: Talal Aslam — 336-989-7040`;
+      try{
+        await navigator.clipboard.writeText(message);
+        showToast("Copied", "Paste into WhatsApp/Text to finalize booking.");
+      }catch(err){
+        showToast("Copy failed", "Your browser blocked copying. Select text manually or try another browser.");
+      }
+    });
+  </script>
+</body>
+</html>
