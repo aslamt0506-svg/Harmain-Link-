@@ -222,6 +222,25 @@
     }
     .feature b{display:block; margin-bottom: 6px}
     .feature p{margin:0; color:var(--muted); font-size: 14px}
+
+    /* Testimonials grid (auto-fit so 2 quotes don't leave an empty third column) */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .quote{
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .quote-by{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     .packages{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
     .pkg{
       padding: 18px;
@@ -406,6 +425,40 @@
           <div class="submitrow">
             <a class="btn" href="https://forms.gle/nv8nx4Zp5A9ruHEU6" target="_blank" rel="noopener">Open Booking Form</a>
             <a class="btn secondary" href="mailto:info@harmainlink.com">Email info@harmainlink.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ ADDED: Testimonials (visible, directly under hero, before pricing) -->
+    <section class="section" id="testimonials">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>What travelers are saying</h3>
+        <p style="margin:0;color:var(--muted);max-width:75ch">
+          Real reflections from young Muslims who experienced Umrah with Harmain Link.
+        </p>
+        <div class="sep"></div>
+
+        <div class="testimonials-grid" role="list" aria-label="Testimonials">
+          <div class="feature" role="listitem" aria-label="Testimonial from Jack Goodwin">
+            <p class="quote">
+              “Performing Umrah gave life to my heart and opened the doors to the sweetness of Iman.
+              It was a life-changing experience.”
+            </p>
+            <div class="quote-by">
+              — <b style="color:var(--text)">Jack Goodwin</b>, 19, Revert
+            </div>
+          </div>
+
+          <div class="feature" role="listitem" aria-label="Testimonial from Rehan Baig">
+            <p class="quote">
+              “Going on a trip with like-minded younger Muslims made the experience far more valuable to me
+              and grew my sense of community for the religion.”
+            </p>
+            <div class="quote-by">
+              — <b style="color:var(--text)">Rehan Baig</b>
+            </div>
           </div>
         </div>
       </div>
