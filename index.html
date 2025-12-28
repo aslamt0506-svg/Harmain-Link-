@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Harmain Link — Umrah & Travel (Easy Booking)</title>
   <meta name="description" content="Affordable Umrah packages for young Muslims. Easy booking for April 2–12, 2026. Contact: info@harmainlink.com" />
-
   <style>
     :root{
       --bg:#071a14;
@@ -21,7 +20,7 @@
       --radius: 22px;
       --radius2: 16px;
       --max: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
     *{box-sizing:border-box}
     body{
@@ -30,148 +29,811 @@
       background:
         radial-gradient(1200px 700px at 15% -10%, rgba(214,178,94,.22), transparent 55%),
         radial-gradient(900px 600px at 85% 0%, rgba(23,139,104,.35), transparent 55%),
+        radial-gradient(900px 700px at 50% 110%, rgba(214,178,94,.18), transparent 55%),
         linear-gradient(180deg, #04110d 0%, var(--bg) 45%, #04110d 100%);
       color:var(--text);
       line-height:1.45;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:18px 18px 72px}
-    .topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(4,17,13,.9);border-bottom:1px solid var(--line)}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;gap:16px}
-    .brand{display:flex;gap:10px;align-items:center}
-    .brand-logo{width:42px;height:42px;border-radius:12px;background:#fff;padding:4px}
-    .brand h1{font-size:14px;margin:0;letter-spacing:.12em;text-transform:uppercase}
-    .brand small{color:var(--muted)}
-    .navlinks{display:flex;gap:12px;flex-wrap:wrap}
-    .navlinks a{padding:10px 12px;border-radius:12px;color:var(--muted)}
-    .navlinks a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px 72px}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(4,17,13,.92), rgba(4,17,13,.68));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:12px 18px; max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 220px;
+    }
 
+    /* (Old placeholder mark kept harmlessly; not used now) */
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background: radial-gradient(circle at 30% 20%, rgba(214,178,94,.9), rgba(214,178,94,.25) 40%, rgba(23,139,104,.45) 72%, rgba(14,43,34,.25));
+      border:1px solid rgba(214,178,94,.35);
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+      position:relative; overflow:hidden;
+    }
+    .mark:before{
+      content:"";
+      position:absolute; inset:-60%;
+      background: conic-gradient(from 180deg, rgba(214,178,94,.0), rgba(214,178,94,.55), rgba(214,178,94,.0));
+      transform: rotate(25deg);
+      opacity:.9;
+    }
+
+    /* Logo in navbar */
+    .brand-logo{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background: rgba(255,255,255,.92);
+      padding: 4px;
+      border:1px solid rgba(214,178,94,.35);
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+      object-fit: contain;
+      display:block;
+      flex: 0 0 auto;
+    }
+
+    .brand h1{font-size:14px; margin:0; letter-spacing:.12em; text-transform:uppercase}
+    .brand small{display:block; color:var(--muted); letter-spacing:.06em}
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      padding:10px 12px; border-radius:12px; color:var(--muted);
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{border-color:var(--line); color:var(--text); background: rgba(255,255,255,.03)}
     .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      border-radius:999px;
-      padding:12px 16px;
+      display:inline-flex; align-items:center; gap:10px;
+      border-radius: 999px;
+      padding: 12px 16px;
       border:1px solid rgba(214,178,94,.45);
-      background:linear-gradient(180deg,rgba(214,178,94,.25),rgba(214,178,94,.08));
-      font-weight:700;
+      background: linear-gradient(180deg, rgba(214,178,94,.24), rgba(214,178,94,.08));
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      font-weight: 700;
+      letter-spacing:.02em;
       cursor:pointer;
     }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
     .btn.secondary{
-      border-color:rgba(233,247,241,.2);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
+      border-color: rgba(233,247,241,.16);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:650;
+    }
+    .hero{
+      display:grid; grid-template-columns: 1.15fr .85fr;
+      gap: 18px; align-items:stretch;
+      padding: 26px 0 10px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(14,43,34,.82), rgba(11,34,27,.82));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card.pad{padding: 22px}
+    .glow{
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(214,178,94,.20), transparent 60%),
+                  radial-gradient(480px 220px at 95% 15%, rgba(23,139,104,.25), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .headline{
+      position:relative;
+      padding: 10px 10px 0 10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px; border-radius: 999px;
+      border:1px solid rgba(214,178,94,.38);
+      background: rgba(214,178,94,.10);
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size: 12px;
+    }
+    .headline h2{
+      margin: 14px 0 8px;
+      font-size: 44px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    .headline p{margin: 0; color: var(--muted); font-size: 16px; max-width: 60ch}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px}
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
+    .pill{
+      border:1px solid rgba(233,247,241,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      border-radius:999px;
+      padding: 10px 12px;
+      font-size: 13px;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .kpi{
+      margin-top: 18px;
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .kpi .mini{
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      padding: 12px;
+    }
+    .mini strong{display:block; font-size: 18px}
+    .mini span{color: var(--muted); font-size: 12px}
+
+    /* Booking box */
+    .booking-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .booking-head h3{margin:0; font-size: 18px}
+    .booking-head small{color:var(--muted)}
+    .hint{color: var(--muted); font-size: 12px}
+    .submitrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top: 10px}
+    .note{
+      border-top: 1px dashed rgba(233,247,241,.16);
+      margin-top: 14px; padding-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;padding:24px 0}
-    .card{background:rgba(14,43,34,.9);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .card.pad{padding:22px}
-    .badge{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid rgba(214,178,94,.4);background:rgba(214,178,94,.15);font-size:12px;font-weight:700}
-    .headline h2{font-size:44px;margin:14px 0 8px}
-    .headline p{color:var(--muted);max-width:60ch}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    /* Hero watermark logo (fills space subtly) */
+    .hero-watermark{
+      position:absolute;
+      right:-28px;
+      bottom:-38px;
+      width: 320px;
+      height:auto;
+      opacity: .12;
+      transform: rotate(-6deg);
+      filter: blur(.1px);
+      pointer-events:none;
+      user-select:none;
+    }
 
-    .section{margin-top:26px}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .feature{border:1px solid rgba(233,247,241,.12);background:rgba(255,255,255,.03);border-radius:18px;padding:16px}
-    footer{margin-top:30px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+    .section{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .section h3{margin:0 0 6px; font-size: 18px}
+    .grid3{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .feature{
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      min-height: 120px;
+    }
+    .feature b{display:block; margin-bottom: 6px}
+    .feature p{margin:0; color:var(--muted); font-size: 14px}
 
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
+    /* Testimonials grid (auto-fit so 2 quotes don't leave an empty third column) */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .quote{
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .quote-by{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .packages{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+    .pkg{
+      padding: 18px;
+      border-radius: 18px;
+      border:1px solid rgba(233,247,241,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      position:relative; overflow:hidden;
+    }
+    .pkg .tag{
+      position:absolute; top:14px; right:14px;
+      font-size: 12px; color: var(--text);
+      padding: 7px 10px; border-radius:999px;
+      border:1px solid rgba(214,178,94,.40);
+      background: rgba(214,178,94,.12);
+    }
+    .pkg h4{margin: 0 0 6px; font-size: 18px}
+    .pkg .price{font-size: 26px; font-weight: 900; letter-spacing:-.02em}
+    .pkg .sub{color:var(--muted); font-size: 12px; margin-top: 2px}
+    .pkg ul{margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px}
+    .pkg li{margin: 6px 0}
+    .faq{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+    details{
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+      border-radius: 18px;
+      padding: 14px 14px;
+    }
+    summary{cursor:pointer; font-weight: 800}
+    details p{color: var(--muted); margin: 10px 0 0}
+    footer{
+      margin-top: 26px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      font-size: 12px;
+    }
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(14,43,34,.96);
+      border: 1px solid rgba(233,247,241,.18);
+      padding: 12px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index: 99;
+      max-width: min(680px, calc(100vw - 24px));
+    }
+    .toast strong{color: var(--text)}
+    .toast span{color: var(--muted)}
+    .right-art{
+      position:absolute; inset:auto -140px -160px auto;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle at 35% 30%, rgba(214,178,94,.35), rgba(214,178,94,.10) 45%, rgba(23,139,104,.18) 72%, transparent);
+      filter: blur(2px);
+      opacity:.9;
+      pointer-events:none;
+      transform: rotate(12deg);
+    }
+    .sep{height:1px; background: var(--line); margin: 14px 0}
+
+    /* ---- Embedded booking form styles (NEW) ---- */
+    form.booking-form{
+      position:relative;
+      margin-top: 12px;
+    }
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .field{display:flex; flex-direction:column; gap:8px}
+    .field.full{grid-column: 1 / -1}
+    label{
+      font-size: 12px;
+      letter-spacing:.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    input, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(233,247,241,.16);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+    }
+    input::placeholder{color: rgba(185,214,203,.7)}
+    input:focus, select:focus{
+      border-color: rgba(214,178,94,.55);
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+    select option{
+      background: #061812;
+      color: var(--text);
+    }
+    .radios{
+      display:grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .radio{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(233,247,241,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .radio input{
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      flex: 0 0 auto;
+    }
+    .radio b{display:block; font-size: 14px; color: var(--text)}
+    .radio span{display:block; font-size: 12px; color: var(--muted); margin-top: 2px}
+    .form-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top: 14px;
+    }
+    .form-actions .hint{
+      margin:0;
+    }
+    .btn[type="submit"]{
+      border:1px solid rgba(214,178,94,.55);
+    }
+    .form-status{
+      margin-top: 12px;
+      border-radius: 16px;
+      border:1px solid rgba(233,247,241,.14);
+      background: rgba(255,255,255,.03);
+      padding: 12px;
+      color: var(--muted);
+      display:none;
+    }
+    .form-status.success{
+      border-color: rgba(23,139,104,.35);
+    }
+    .form-status.error{
+      border-color: rgba(255,120,120,.35);
+    }
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr}
+      .headline h2{font-size: 40px}
+      .grid3, .packages{grid-template-columns: 1fr}
+      .faq{grid-template-columns: 1fr}
+      .kpi{grid-template-columns: 1fr}
+      .brand{min-width:auto}
+      .hero-watermark{ width: 240px; right:-14px; bottom:-20px; opacity:.10; }
+      .form-grid{grid-template-columns: 1fr}
+      .field.full{grid-column: auto}
     }
   </style>
 </head>
-
 <body>
-<div class="topbar">
-  <div class="nav">
-    <div class="brand">
-      <img class="brand-logo" src="assets/harmain-logo.jpg" alt="Harmain Link logo">
-      <div>
-        <h1>Harmain Link</h1>
-        <small>Umrah & Travel</small>
-      </div>
-    </div>
-
-    <div class="navlinks">
-      <a href="#packages">Packages</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn secondary" href="#book">Book</a>
-      <a class="btn" href="https://calendly.com/harmainlink-info/30min" target="_blank">Book consultation</a>
-      <a class="btn secondary" href="https://chat.whatsapp.com/BxKdoiMXL6C2ndiyIyp5lY" target="_blank">
-        Get Summer/Winter updates
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="wrap">
-  <section class="hero">
-    <div class="card pad">
-      <span class="badge">April 2–12, 2026 • Limited spots</span>
-      <div class="headline">
-        <h2>Affordable Umrah for young Muslims — without the hassle.</h2>
-        <p>Clear pricing, group support, and simple booking. Built for ages <b>17–30</b>.</p>
-
-        <div class="hero-cta">
-          <a class="btn" href="#book">Start booking</a>
-          <a class="btn secondary" href="#packages">View packages</a>
-          <a class="btn secondary" href="https://calendly.com/harmainlink-info/30min" target="_blank">Book consultation</a>
-          <a class="btn secondary" href="https://chat.whatsapp.com/BxKdoiMXL6C2ndiyIyp5lY" target="_blank">
-            Get Summer/Winter updates
-          </a>
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand" aria-label="Harmain Link">
+        <!-- Upload your logo as: harmain-logo.jpg (same folder as index.html) -->
+        <img class="brand-logo" src="assets/harmain-logo.jpg" alt="Harmain Link logo" />
+        <div>
+          <h1>Harmain Link</h1>
+          <small>Umrah & Travel • Easy Booking</small>
         </div>
       </div>
-    </div>
+      <div class="navlinks">
+        <a href="#packages">Packages</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn secondary" href="#book">Book</a>
 
-    <div class="card pad" id="book">
-      <h3>Book your spot</h3>
-      <p class="hint">Or join updates if this trip doesn’t work for you.</p>
-
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
-        <a class="btn" href="https://calendly.com/harmainlink-info/30min" target="_blank">Book consultation</a>
-        <a class="btn secondary" href="https://chat.whatsapp.com/BxKdoiMXL6C2ndiyIyp5lY" target="_blank">
-          Join future trip updates
+        <!-- UPDATED: Call button replaced with Calendly consultation button -->
+        <a class="btn"
+           href="https://calendly.com/harmainlink-info/30min"
+           target="_blank"
+           rel="noopener"
+           aria-label="Book a consultation">
+          Book a consultation
         </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section" id="packages">
-    <div class="card pad">
-      <h3>Packages</h3>
-      <div class="grid3">
-        <div class="feature">
-          <b>Essential</b>
-          <p>$1,650–$1,880 • Only option this cycle</p>
-        </div>
-        <div class="feature">
-          <b>Comfort</b>
-          <p>Not offered this cycle</p>
-        </div>
-        <div class="feature">
-          <b>Elite</b>
-          <p>Not offered this cycle</p>
+  <div class="wrap">
+    <section class="hero" id="home">
+      <div class="card pad">
+        <div class="glow"></div>
+        <div class="right-art" aria-hidden="true"></div>
+
+        <!-- Subtle watermark logo to fill space -->
+        <img class="hero-watermark" src="assets/harmain-logo.jpg" alt="" aria-hidden="true" />
+
+        <div class="headline">
+          <span class="badge">April 2–12, 2026 • Limited Spots</span>
+          <h2>Affordable Umrah for Young Muslims — without the hassle.</h2>
+          <p>
+            Harmain Link is built for ages <b>17–30</b>: clear pricing, group support, and a simple booking flow.
+            Reserve your spot, upload your details later, and travel with confidence.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#book">Start Booking</a>
+            <a class="btn secondary" href="#packages">View Packages</a>
+            <a class="btn secondary" href="https://calendly.com/harmainlink-info/30min" target="_blank" rel="noopener">Book a consultation</a>
+          </div>
+
+          <div class="pillrow" role="list" aria-label="Highlights">
+            <span class="pill" role="listitem">✅ Easy deposit + payment plan</span>
+            <span class="pill" role="listitem">🕋 Guided Umrah sessions</span>
+            <span class="pill" role="listitem">🧳 Group logistics handled</span>
+            <span class="pill" role="listitem">📱 WhatsApp-friendly updates</span>
+          </div>
+
+          <div class="kpi" aria-label="Key info">
+            <div class="mini">
+              <strong>Apr 2–12, 2026</strong>
+              <span>Trip dates</span>
+            </div>
+            <div class="mini">
+              <strong>USA → KSA</strong>
+              <span>Flights coordinated</span>
+            </div>
+            <div class="mini">
+              <strong>info@harmainlink.com</strong>
+              <span>Direct contact</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="faq">
-    <div class="card pad">
-      <h3>FAQ</h3>
-      <p class="hint">More trips open seasonally.</p>
-      <a class="btn secondary" href="https://chat.whatsapp.com/BxKdoiMXL6C2ndiyIyp5lY" target="_blank">
-        Join WhatsApp for future trips
-      </a>
-    </div>
-  </section>
+      <div class="card pad" id="book" aria-label="Booking card">
+        <div class="glow"></div>
+        <div class="booking-head">
+          <div>
+            <h3>Book your spot</h3>
+            <small>Submit the booking form below (goes directly to Harmain Link)</small>
+          </div>
+          <div style="text-align:right">
+            <small style="color:var(--muted)">Trip</small><br/>
+            <b>Apr 2–12, 2026</b>
+          </div>
+        </div>
 
-  <footer>
-    <div>© <script>document.write(new Date().getFullYear())</script> Harmain Link</div>
-    <div>
-      Contact: <a href="mailto:info@harmainlink.com"><b style="color:#fff">info@harmainlink.com</b></a>
-    </div>
-  </footer>
-</div>
+        <!-- ✅ REPLACED: Google Form iframe → Embedded styled form (Formspree) -->
+        <form class="booking-form" action="https://formspree.io/f/xgoevllg" method="POST" id="bookingForm">
+          <!-- Helps Formspree email subject -->
+          <input type="hidden" name="_subject" value="New Harmain Link Booking Request" />
+          <!-- After submit, we handle toast/status; avoid redirect -->
+          <input type="hidden" name="_redirect" value="false" />
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-grid" aria-label="Booking form fields">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="Full Name" type="text" placeholder="e.g., Ahmed percival" required />
+            </div>
+
+            <div class="field">
+              <label for="age">Age</label>
+              <input id="age" name="Age" type="number" min="10" max="100" inputmode="numeric" placeholder="e.g., 23" required />
+            </div>
+
+            <div class="field">
+              <label for="state">State</label>
+              <input id="state" name="State" type="text" placeholder="e.g., Texas" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="Phone Number" type="tel" inputmode="tel" placeholder="e.g., (555) 123-4567" required />
+            </div>
+
+            <div class="field full">
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" inputmode="email" placeholder="you@email.com" required />
+            </div>
+
+            <div class="field full">
+              <label>Payment Preference</label>
+              <div class="radios" role="radiogroup" aria-label="Payment Preference">
+                <label class="radio">
+                  <input type="radio" name="Payment Preference" value="Deposit to reserve spot" required />
+                  <div>
+                    <b>Deposit to reserve spot</b>
+                    <span>Secure your place first — we’ll follow up with next steps.</span>
+                  </div>
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="Payment Preference" value="Payment plan (12 months)" required />
+                  <div>
+                    <b>Payment plan (12 months)</b>
+                    <span>Spread payments across 12 months (availability confirmed after booking).</span>
+                  </div>
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="Payment Preference" value="Pay in full" required />
+                  <div>
+                    <b>Pay in full</b>
+                    <span>Fastest confirmation — we’ll send your agreement + checklist.</span>
+                  </div>
+                </label>
+              </div>
+              <p class="hint" style="margin:10px 0 0">We’ll confirm availability and send your agreement + timeline after submission.</p>
+            </div>
+
+            <div class="field full">
+              <label for="package">Package</label>
+              <select id="package" name="Package" required>
+                <option value="Essential" selected>Essential (only option this cycle)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit" aria-label="Submit booking">Submit Booking</button>
+            <a class="btn secondary" href="mailto:info@harmainlink.com">Email info@harmainlink.com</a>
+          </div>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="note">
+          Prefer booking after a quick call?
+          <div class="submitrow">
+            <a class="btn" href="https://calendly.com/harmainlink-info/30min" target="_blank" rel="noopener">Book a consultation</a>
+            <a class="btn secondary" href="#packages">View Packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ ADDED: Testimonials (visible, directly under hero, before pricing) -->
+    <section class="section" id="testimonials">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>What travelers are saying</h3>
+        <p style="margin:0;color:var(--muted);max-width:75ch">
+          Real reflections from young Muslims who experienced Umrah with Harmain Link.
+        </p>
+        <div class="sep"></div>
+
+        <div class="testimonials-grid" role="list" aria-label="Testimonials">
+          <div class="feature" role="listitem" aria-label="Testimonial from Jack Goodwin">
+            <p class="quote">
+              “Performing Umrah gave life to my heart and opened the doors to the sweetness of Iman.
+              It was a life-changing experience.”
+            </p>
+            <div class="quote-by">
+              — <b style="color:var(--text)">Jack Goodwin</b> 19, Revert
+            </div>
+          </div>
+
+          <div class="feature" role="listitem" aria-label="Testimonial from Rehan Baig">
+            <p class="quote">
+              “Going on a trip with like-minded younger Muslims made the experience far more valuable to me
+              and grew my sense of community for the religion.”
+            </p>
+            <div class="quote-by">
+              — <b style="color:var(--text)">Rehan Baig</b> 24
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>Packages</h3>
+        <p style="margin:0;color:var(--muted);max-width:75ch">
+          See current package plans
+        </p>
+        <div class="sep"></div>
+
+        <div class="packages" role="list">
+          <div class="pkg" role="listitem">
+            <span class="tag">Best value</span>
+            <h4>Essential</h4>
+            <div class="price">$1,650-$1,880</div>
+            <div class="sub">Solid hotels • group support • guided sessions</div>
+            <ul>
+              <li>$1,650 - Early Bird: Ends December 31st</li>
+              <li>$1,765 - Regular: Ends January 18th</li>
+              <li>$1,880 - Late: Ends February 18th</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Most popular</span>
+            <h4>Comfort</h4>
+            <div class="price">NOT OFFERED THIS CYCLE</div>
+            <div class="sub">Upgraded stay • more convenience</div>
+            <ul>
+              <li>Closer hotels or upgraded rooms</li>
+              <li>Streamlined group schedule</li>
+              <li>Extra guided sessions / Q&A</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Premium</span>
+            <h4>Elite</h4>
+            <div class="price">NOT OFFERED THIS CYCLE</div>
+            <div class="sub">Premium experience • max comfort</div>
+            <ul>
+              <li>Top-tier hotels (where available)</li>
+              <li>Priority group logistics</li>
+              <li>Concierge-level coordination</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>How booking works</h3>
+        <div class="grid3" role="list">
+          <div class="feature" role="listitem">
+            <b>1) Reserve</b>
+            <p>Submit your booking request in under a minute. If you're still unsure, book a consultation completely free!
+              We'll confirm availability and next steps.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <b>2) Confirm</b>
+            <p>Pay deposit or set a plan. You’ll receive the trip agreement, checklist, and timeline.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <b>3) Travel</b>
+            <p>We coordinate the group flow, support you throughout, and keep the experience smooth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>FAQ</h3>
+        <div class="faq">
+          <details>
+            <summary>Can I book if I don’t have a passport yet?</summary>
+            <p>Yes — select “No (I’m working on it)” and we’ll share deadlines and help you stay on track.</p>
+          </details>
+          <details>
+            <summary>Is this tailored for ages 17–30 only?</summary>
+            <p>That’s our focus for group dynamic, but you can still request a booking. We’ll confirm fit and logistics.</p>
+          </details>
+          <details>
+            <summary>How do roommates work?</summary>
+            <p>Tell us your preference in the notes. We try to match roommates by preference and availability.</p>
+          </details>
+          <details>
+            <summary>What happens after I submit this form?</summary>
+            <p>We contact you (WhatsApp/phone/email) to confirm package details, payments, and send the agreement to sign.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="card pad">
+        <div class="glow"></div>
+        <h3>Contact</h3>
+        <p style="margin:0;color:var(--muted)">
+          Questions? Reach out directly:
+        </p>
+        <div class="sep"></div>
+        <div class="grid3">
+          <!-- UPDATED: Phone/name replaced with email -->
+          <div class="feature">
+            <b>Email</b>
+            <p><a href="mailto:info@harmainlink.com"><b style="color:var(--text)">info@harmainlink.com</b></a></p>
+            <p class="hint" style="margin:0">Harmain Link</p>
+          </div>
+
+          <!-- UPDATED: WhatsApp box replaced with consultation info -->
+          <div class="feature">
+            <b>Consultation</b>
+            <p class="hint">
+              Book a 30-minute consultation to go over packages, roommates, and deadlines.
+            </p>
+            <p style="margin:10px 0 0">
+              <a class="btn secondary" href="https://calendly.com/harmainlink-info/30min" target="_blank" rel="noopener">Book on Calendly</a>
+            </p>
+          </div>
+
+          <div class="feature">
+            <b>Next steps</b>
+            <p class="hint">After booking, we send: agreement, checklist, passport/visa timeline, and itinerary draft.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Harmain Link • Umrah & Travel</div>
+      <div>
+        Trip dates: <b style="color:var(--text)">April 2–12, 2026</b> • Contact:
+        <a href="mailto:info@harmainlink.com"><b style="color:var(--text)">info@harmainlink.com</b></a>
+      </div>
+      <div><a href="#book">Book</a> • <a href="#packages">Packages</a> • <a href="#faq">FAQ</a></div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <strong id="toastTitle">Saved.</strong> <span id="toastMsg">We’ll be in touch shortly.</span>
+  </div>
+
+  <script>
+    // Footer year
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Booking form -> Formspree (AJAX submit) + toast feedback
+    const form = document.getElementById("bookingForm");
+    const toast = document.getElementById("toast");
+    const toastTitle = document.getElementById("toastTitle");
+    const toastMsg = document.getElementById("toastMsg");
+    const statusEl = document.getElementById("formStatus");
+
+    function showToast(title, msg){
+      if (!toast) return;
+      if (toastTitle) toastTitle.textContent = title;
+      if (toastMsg) toastMsg.textContent = msg;
+      toast.style.display = "block";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{ toast.style.display="none"; }, 4200);
+    }
+
+    function showStatus(kind, msg){
+      if (!statusEl) return;
+      statusEl.className = "form-status " + (kind || "");
+      statusEl.textContent = msg;
+      statusEl.style.display = "block";
+    }
+
+    if (form){
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        showStatus("", "Submitting…");
+
+        try{
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok){
+            showStatus("success", "Submitted! We’ll reach out shortly with next steps.");
+            showToast("Submitted.", "We’ll be in touch shortly.");
+            form.reset();
+
+            // Reset selects to defaults after reset (some browsers keep last selection)
+            const pkg = document.getElementById("package");
+            if (pkg) pkg.value = "Essential";
+          } else {
+            let data = null;
+            try { data = await res.json(); } catch {}
+            const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
+              ? data.errors[0].message
+              : "Something went wrong. Please try again or email info@harmainlink.com.";
+            showStatus("error", msg);
+            showToast("Couldn’t submit.", "Please try again or email info@harmainlink.com.");
+          }
+        } catch (err){
+          showStatus("error", "Network error. Please try again or email info@harmainlink.com.");
+          showToast("Network error.", "Please try again or email info@harmainlink.com.");
+        }
+      });
+    }
+  </script>
 </body>
 </html>
