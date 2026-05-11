@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Harmain Link — Umrah & Travel (Easy Booking)</title>
-  <meta name="description" content="Affordable Umrah packages for young Muslims. Easy booking for April 2–12, 2026. Contact: info@harmainlink.com" />
+  <meta name="description" content="Affordable Umrah packages for young Muslims. Easy booking for December 11–21, 2026. Contact: info@harmainlink.com" />
   <style>
     :root{
       --bg:#071a14;
@@ -49,8 +49,6 @@
     .brand{
       display:flex; align-items:center; gap:10px; min-width: 220px;
     }
-
-    /* (Old placeholder mark kept harmlessly; not used now) */
     .mark{
       width:38px; height:38px; border-radius:12px;
       background: radial-gradient(circle at 30% 20%, rgba(214,178,94,.9), rgba(214,178,94,.25) 40%, rgba(23,139,104,.45) 72%, rgba(14,43,34,.25));
@@ -65,8 +63,6 @@
       transform: rotate(25deg);
       opacity:.9;
     }
-
-    /* Logo in navbar */
     .brand-logo{
       width:42px;
       height:42px;
@@ -79,7 +75,6 @@
       display:block;
       flex: 0 0 auto;
     }
-
     .brand h1{font-size:14px; margin:0; letter-spacing:.12em; text-transform:uppercase}
     .brand small{display:block; color:var(--muted); letter-spacing:.06em}
     .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
@@ -174,8 +169,6 @@
     }
     .mini strong{display:block; font-size: 18px}
     .mini span{color: var(--muted); font-size: 12px}
-
-    /* Booking box */
     .booking-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
     .booking-head h3{margin:0; font-size: 18px}
     .booking-head small{color:var(--muted)}
@@ -187,8 +180,6 @@
       color: var(--muted);
       font-size: 12px;
     }
-
-    /* Hero watermark logo (fills space subtly) */
     .hero-watermark{
       position:absolute;
       right:-28px;
@@ -201,7 +192,6 @@
       pointer-events:none;
       user-select:none;
     }
-
     .section{
       margin-top: 22px;
       display:grid;
@@ -222,8 +212,6 @@
     }
     .feature b{display:block; margin-bottom: 6px}
     .feature p{margin:0; color:var(--muted); font-size: 14px}
-
-    /* Testimonials grid (auto-fit so 2 quotes don't leave an empty third column) */
     .testimonials-grid{
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -240,8 +228,8 @@
       font-size: 12px;
       color: var(--muted);
     }
-
-    .packages{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+    /* Two-package layout */
+    .packages{display:grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 900px;}
     .pkg{
       padding: 18px;
       border-radius: 18px;
@@ -304,8 +292,6 @@
       transform: rotate(12deg);
     }
     .sep{height:1px; background: var(--line); margin: 14px 0}
-
-    /* ---- Embedded booking form styles (NEW) ---- */
     form.booking-form{
       position:relative;
       margin-top: 12px;
@@ -394,7 +380,6 @@
     .form-status.error{
       border-color: rgba(255,120,120,.35);
     }
-
     @media (max-width: 980px){
       .hero{grid-template-columns: 1fr}
       .headline h2{font-size: 40px}
@@ -412,7 +397,6 @@
   <div class="topbar">
     <div class="nav">
       <div class="brand" aria-label="Harmain Link">
-        <!-- Upload your logo as: harmain-logo.jpg (same folder as index.html) -->
         <img class="brand-logo" src="assets/harmain-logo.jpg" alt="Harmain Link logo" />
         <div>
           <h1>Harmain Link</h1>
@@ -424,8 +408,6 @@
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
         <a class="btn secondary" href="#book">Book</a>
-
-        <!-- UPDATED: Call button replaced with Calendly consultation button -->
         <a class="btn"
            href="https://calendly.com/harmainlink-info/30min"
            target="_blank"
@@ -433,8 +415,6 @@
            aria-label="Book a consultation">
           Book a consultation
         </a>
-
-        <!-- ✅ ADDED: WhatsApp group updates button (navbar only) -->
         <a class="btn secondary"
            href="https://chat.whatsapp.com/BxKdoiMXL6C2ndiyIyp5lY"
            target="_blank"
@@ -451,34 +431,28 @@
       <div class="card pad">
         <div class="glow"></div>
         <div class="right-art" aria-hidden="true"></div>
-
-        <!-- Subtle watermark logo to fill space -->
         <img class="hero-watermark" src="assets/harmain-logo.jpg" alt="" aria-hidden="true" />
-
         <div class="headline">
-          <span class="badge">April 2–12, 2026 • Limited Spots</span>
+          <span class="badge">December 11–21, 2026 • Limited Spots</span>
           <h2>Affordable Umrah for Young Muslims — without the hassle.</h2>
           <p>
             Harmain Link is built for ages <b>17–30</b>: clear pricing, group support, and a simple booking flow.
             Reserve your spot, upload your details later, and travel with confidence.
           </p>
-
           <div class="hero-cta">
             <a class="btn" href="#book">Start Booking</a>
             <a class="btn secondary" href="#packages">View Packages</a>
             <a class="btn secondary" href="https://calendly.com/harmainlink-info/30min" target="_blank" rel="noopener">Book a consultation</a>
           </div>
-
           <div class="pillrow" role="list" aria-label="Highlights">
             <span class="pill" role="listitem">✅ Easy deposit + payment plan</span>
             <span class="pill" role="listitem">🕋 Guided Umrah sessions</span>
             <span class="pill" role="listitem">🧳 Group logistics handled</span>
             <span class="pill" role="listitem">📱 WhatsApp-friendly updates</span>
           </div>
-
           <div class="kpi" aria-label="Key info">
             <div class="mini">
-              <strong>Apr 2–12, 2026</strong>
+              <strong>Dec 11–21, 2026</strong>
               <span>Trip dates</span>
             </div>
             <div class="mini">
@@ -502,17 +476,13 @@
           </div>
           <div style="text-align:right">
             <small style="color:var(--muted)">Trip</small><br/>
-            <b>Apr 2–12, 2026</b>
+            <b>Dec 11–21, 2026</b>
           </div>
         </div>
 
-        <!-- ✅ REPLACED: Google Form iframe → Embedded styled form (Formspree) -->
         <form class="booking-form" action="https://formspree.io/f/xgoevllg" method="POST" id="bookingForm">
-          <!-- Helps Formspree email subject -->
           <input type="hidden" name="_subject" value="New Harmain Link Booking Request" />
-          <!-- After submit, we handle toast/status; avoid redirect -->
           <input type="hidden" name="_redirect" value="false" />
-          <!-- Honeypot anti-spam -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-grid" aria-label="Booking form fields">
@@ -520,27 +490,22 @@
               <label for="fullName">Full Name</label>
               <input id="fullName" name="Full Name" type="text" placeholder="e.g., Ahmed percival" required />
             </div>
-
             <div class="field">
               <label for="age">Age</label>
               <input id="age" name="Age" type="number" min="10" max="100" inputmode="numeric" placeholder="e.g., 23" required />
             </div>
-
             <div class="field">
               <label for="state">State</label>
               <input id="state" name="State" type="text" placeholder="e.g., Texas" required />
             </div>
-
             <div class="field">
               <label for="phone">Phone Number</label>
               <input id="phone" name="Phone Number" type="tel" inputmode="tel" placeholder="e.g., (555) 123-4567" required />
             </div>
-
             <div class="field full">
               <label for="email">Email</label>
               <input id="email" name="Email" type="email" inputmode="email" placeholder="you@email.com" required />
             </div>
-
             <div class="field full">
               <label>Payment Preference</label>
               <div class="radios" role="radiogroup" aria-label="Payment Preference">
@@ -548,10 +513,9 @@
                   <input type="radio" name="Payment Preference" value="Deposit to reserve spot" required />
                   <div>
                     <b>Deposit to reserve spot</b>
-                    <span>Secure your place first — we’ll follow up with next steps.</span>
+                    <span>Secure your place first — we'll follow up with next steps.</span>
                   </div>
                 </label>
-
                 <label class="radio">
                   <input type="radio" name="Payment Preference" value="Payment plan (12 months)" required />
                   <div>
@@ -559,22 +523,22 @@
                     <span>Spread payments across 12 months (availability confirmed after booking).</span>
                   </div>
                 </label>
-
                 <label class="radio">
                   <input type="radio" name="Payment Preference" value="Pay in full" required />
                   <div>
                     <b>Pay in full</b>
-                    <span>Fastest confirmation — we’ll send your agreement + checklist.</span>
+                    <span>Fastest confirmation — we'll send your agreement + checklist.</span>
                   </div>
                 </label>
               </div>
-              <p class="hint" style="margin:10px 0 0">We’ll confirm availability and send your agreement + timeline after submission.</p>
+              <p class="hint" style="margin:10px 0 0">We'll confirm availability and send your agreement + timeline after submission.</p>
             </div>
-
             <div class="field full">
               <label for="package">Package</label>
               <select id="package" name="Package" required>
-                <option value="Essential" selected>Essential (only option this cycle)</option>
+                <option value="" disabled selected>Select a package…</option>
+                <option value="Individual">Individual — shared room ($2,240 / $2,400 / $2,560)</option>
+                <option value="Family Booking">Family Booking — private room ($2,465 / $2,640 / $2,815)</option>
               </select>
             </div>
           </div>
@@ -597,7 +561,6 @@
       </div>
     </section>
 
-    <!-- ✅ ADDED: Testimonials (visible, directly under hero, before pricing) -->
     <section class="section" id="testimonials">
       <div class="card pad">
         <div class="glow"></div>
@@ -606,22 +569,20 @@
           Real reflections from young Muslims who experienced Umrah with Harmain Link.
         </p>
         <div class="sep"></div>
-
         <div class="testimonials-grid" role="list" aria-label="Testimonials">
           <div class="feature" role="listitem" aria-label="Testimonial from Jack Goodwin">
             <p class="quote">
-              “Performing Umrah gave life to my heart and opened the doors to the sweetness of Iman.
-              It was a life-changing experience.”
+              "Performing Umrah gave life to my heart and opened the doors to the sweetness of Iman.
+              It was a life-changing experience."
             </p>
             <div class="quote-by">
               — <b style="color:var(--text)">Jack Goodwin</b> 19, Revert
             </div>
           </div>
-
           <div class="feature" role="listitem" aria-label="Testimonial from Rehan Baig">
             <p class="quote">
-              “Going on a trip with like-minded younger Muslims made the experience far more valuable to me
-              and grew my sense of community for the religion.”
+              "Going on a trip with like-minded younger Muslims made the experience far more valuable to me
+              and grew my sense of community for the religion."
             </p>
             <div class="quote-by">
               — <b style="color:var(--text)">Rehan Baig</b> 24
@@ -636,50 +597,34 @@
         <div class="glow"></div>
         <h3>Packages</h3>
         <p style="margin:0;color:var(--muted);max-width:75ch">
-          See current package plans
+          Two options this cycle — book early for the best rate.
         </p>
         <div class="sep"></div>
-
         <div class="packages" role="list">
           <div class="pkg" role="listitem">
-            <span class="tag">Best value</span>
-            <h4>Essential</h4>
-            <div class="price">$1,650-$1,880</div>
-            <div class="sub">Solid hotels • group support • guided sessions</div>
+            <span class="tag">Standard</span>
+            <h4>Individual</h4>
+            <div class="price">$2,240–$2,560</div>
+            <div class="sub">Shared room • group support • guided sessions</div>
             <ul>
-              <li>$1,650 - Early Bird: Ends December 31st</li>
-              <li>$1,765 - Regular: Ends January 18th</li>
-              <li>$1,880 - Late: Ends February 18th</li>
+              <li><b>$2,240</b> — Early Bird: Ends September 30th</li>
+              <li><b>$2,400</b> — Regular: Ends October 31st</li>
+              <li><b>$2,560</b> — Late: Ends November 20th</li>
             </ul>
           </div>
-
           <div class="pkg" role="listitem">
-            <span class="tag">Most popular</span>
-            <h4>Comfort</h4>
-            <div class="price">NOT OFFERED THIS CYCLE</div>
-            <div class="sub">Upgraded stay • more convenience</div>
+            <span class="tag">Private room</span>
+            <h4>Family Booking</h4>
+            <div class="price">$2,465–$2,815</div>
+            <div class="sub">Private room • ideal for spouses, families & kids</div>
             <ul>
-              <li>Closer hotels or upgraded rooms</li>
-              <li>Streamlined group schedule</li>
-              <li>Extra guided sessions / Q&A</li>
-            </ul>
-          </div>
-
-          <div class="pkg" role="listitem">
-            <span class="tag">Premium</span>
-            <h4>Elite</h4>
-            <div class="price">NOT OFFERED THIS CYCLE</div>
-            <div class="sub">Premium experience • max comfort</div>
-            <ul>
-              <li>Top-tier hotels (where available)</li>
-              <li>Priority group logistics</li>
-              <li>Concierge-level coordination</li>
+              <li><b>$2,465</b> — Early Bird: Ends September 30th</li>
+              <li><b>$2,640</b> — Regular: Ends October 31st</li>
+              <li><b>$2,815</b> — Late: Ends November 20th</li>
             </ul>
           </div>
         </div>
-
         <div class="sep"></div>
-
       </div>
     </section>
 
@@ -695,7 +640,7 @@
           </div>
           <div class="feature" role="listitem">
             <b>2) Confirm</b>
-            <p>Pay deposit or set a plan. You’ll receive the trip agreement, checklist, and timeline.</p>
+            <p>Pay deposit or set a plan. You'll receive the trip agreement, checklist, and timeline.</p>
           </div>
           <div class="feature" role="listitem">
             <b>3) Travel</b>
@@ -711,12 +656,12 @@
         <h3>FAQ</h3>
         <div class="faq">
           <details>
-            <summary>Can I book if I don’t have a passport yet?</summary>
-            <p>Yes — select “No (I’m working on it)” and we’ll share deadlines and help you stay on track.</p>
+            <summary>Can I book if I don't have a passport yet?</summary>
+            <p>Yes — select "No (I'm working on it)" and we'll share deadlines and help you stay on track.</p>
           </details>
           <details>
             <summary>Is this tailored for ages 17–30 only?</summary>
-            <p>That’s our focus for group dynamic, but you can still request a booking. We’ll confirm fit and logistics.</p>
+            <p>That's our focus for group dynamic, but you can still request a booking. We'll confirm fit and logistics.</p>
           </details>
           <details>
             <summary>How do roommates work?</summary>
@@ -739,14 +684,11 @@
         </p>
         <div class="sep"></div>
         <div class="grid3">
-          <!-- UPDATED: Phone/name replaced with email -->
           <div class="feature">
             <b>Email</b>
             <p><a href="mailto:info@harmainlink.com"><b style="color:var(--text)">info@harmainlink.com</b></a></p>
             <p class="hint" style="margin:0">Harmain Link</p>
           </div>
-
-          <!-- UPDATED: WhatsApp box replaced with consultation info -->
           <div class="feature">
             <b>Consultation</b>
             <p class="hint">
@@ -756,7 +698,6 @@
               <a class="btn secondary" href="https://calendly.com/harmainlink-info/30min" target="_blank" rel="noopener">Book on Calendly</a>
             </p>
           </div>
-
           <div class="feature">
             <b>Next steps</b>
             <p class="hint">After booking, we send: agreement, checklist, passport/visa timeline, and itinerary draft.</p>
@@ -768,7 +709,7 @@
     <footer>
       <div>© <span id="year"></span> Harmain Link • Umrah & Travel</div>
       <div>
-        Trip dates: <b style="color:var(--text)">April 2–12, 2026</b> • Contact:
+        Trip dates: <b style="color:var(--text)">December 11–21, 2026</b> • Contact:
         <a href="mailto:info@harmainlink.com"><b style="color:var(--text)">info@harmainlink.com</b></a>
       </div>
       <div><a href="#book">Book</a> • <a href="#packages">Packages</a> • <a href="#faq">FAQ</a></div>
@@ -776,15 +717,13 @@
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite">
-    <strong id="toastTitle">Saved.</strong> <span id="toastMsg">We’ll be in touch shortly.</span>
+    <strong id="toastTitle">Saved.</strong> <span id="toastMsg">We'll be in touch shortly.</span>
   </div>
 
   <script>
-    // Footer year
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
 
-    // Booking form -> Formspree (AJAX submit) + toast feedback
     const form = document.getElementById("bookingForm");
     const toast = document.getElementById("toast");
     const toastTitle = document.getElementById("toastTitle");
@@ -821,13 +760,12 @@
           });
 
           if (res.ok){
-            showStatus("success", "Submitted! We’ll reach out shortly with next steps.");
-            showToast("Submitted.", "We’ll be in touch shortly.");
+            showStatus("success", "Submitted! We'll reach out shortly with next steps.");
+            showToast("Submitted.", "We'll be in touch shortly.");
             form.reset();
 
-            // Reset selects to defaults after reset (some browsers keep last selection)
             const pkg = document.getElementById("package");
-            if (pkg) pkg.value = "Essential";
+            if (pkg) pkg.value = "";
           } else {
             let data = null;
             try { data = await res.json(); } catch {}
@@ -835,7 +773,7 @@
               ? data.errors[0].message
               : "Something went wrong. Please try again or email info@harmainlink.com.";
             showStatus("error", msg);
-            showToast("Couldn’t submit.", "Please try again or email info@harmainlink.com.");
+            showToast("Couldn't submit.", "Please try again or email info@harmainlink.com.");
           }
         } catch (err){
           showStatus("error", "Network error. Please try again or email info@harmainlink.com.");
