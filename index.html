@@ -228,7 +228,7 @@
       font-size: 12px;
       color: var(--muted);
     }
-    /* Two-package layout */
+    /* Four-package 2x2 grid */
     .packages{display:grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 900px;}
     .pkg{
       padding: 18px;
@@ -359,9 +359,7 @@
       align-items:center;
       margin-top: 14px;
     }
-    .form-actions .hint{
-      margin:0;
-    }
+    .form-actions .hint{ margin:0; }
     .btn[type="submit"]{
       border:1px solid rgba(214,178,94,.55);
     }
@@ -374,12 +372,8 @@
       color: var(--muted);
       display:none;
     }
-    .form-status.success{
-      border-color: rgba(23,139,104,.35);
-    }
-    .form-status.error{
-      border-color: rgba(255,120,120,.35);
-    }
+    .form-status.success{ border-color: rgba(23,139,104,.35); }
+    .form-status.error{ border-color: rgba(255,120,120,.35); }
     @media (max-width: 980px){
       .hero{grid-template-columns: 1fr}
       .headline h2{font-size: 40px}
@@ -527,11 +521,13 @@
               <p class="hint" style="margin:10px 0 0">A $500 down payment is required to secure your spot. We'll confirm availability and send your agreement + timeline after submission.</p>
             </div>
             <div class="field full">
-              <label for="package">Package</label>
+              <label for="package">Booking Type</label>
               <select id="package" name="Package" required>
-                <option value="" disabled selected>Select a package…</option>
-                <option value="Individual">Individual — shared room ($2,240 / $2,400 / $2,560)</option>
-                <option value="Family Booking">Family Booking — private room ($2,465 / $2,640 / $2,815)</option>
+                <option value="" disabled selected>Select your booking type…</option>
+                <option value="Individual (shared 4-bed room)">Individual — shared 4-bed room ($2,240 / $2,400 / $2,560)</option>
+                <option value="Couple / Group of 2 (private room)">Couple / Group of 2 — private room ($2,430 / $2,600 / $2,775)</option>
+                <option value="Family / Group of 3 (private room)">Family / Group of 3 — private room ($2,335 / $2,500 / $2,665)</option>
+                <option value="Family / Group of 4 (full private room)">Family / Group of 4 — full private room ($2,240 / $2,400 / $2,560)</option>
               </select>
             </div>
           </div>
@@ -590,33 +586,60 @@
         <div class="glow"></div>
         <h3>Packages</h3>
         <p style="margin:0;color:var(--muted);max-width:75ch">
-          Two options this cycle — book early for the best rate.
+          Pricing is based on how many people share a room. Standard rooms are 4-bed — the more beds you fill, the lower the per-person cost.
         </p>
         <div class="sep"></div>
+
         <div class="packages" role="list">
           <div class="pkg" role="listitem">
-            <span class="tag">Standard</span>
+            <span class="tag">Solo traveler</span>
             <h4>Individual</h4>
             <div class="price">$2,240–$2,560</div>
-            <div class="sub">Shared room • group support • guided sessions</div>
+            <div class="sub">Placed in a shared 4-bed room • group support • guided sessions</div>
             <ul>
               <li><b>$2,240</b> — Early Bird: Ends September 30th</li>
               <li><b>$2,400</b> — Regular: Ends October 31st</li>
               <li><b>$2,560</b> — Late: Ends November 20th</li>
             </ul>
           </div>
+
           <div class="pkg" role="listitem">
             <span class="tag">Private room</span>
-            <h4>Family Booking</h4>
-            <div class="price">$2,465–$2,815</div>
-            <div class="sub">Private room • ideal for spouses, families & kids</div>
+            <h4>Couple / Group of 2</h4>
+            <div class="price">$2,430–$2,775</div>
+            <div class="sub">Private room for 2 • married couples or travel partners</div>
             <ul>
-              <li><b>$2,465</b> — Early Bird: Ends September 30th</li>
-              <li><b>$2,640</b> — Regular: Ends October 31st</li>
-              <li><b>$2,815</b> — Late: Ends November 20th</li>
+              <li><b>$2,430</b> — Early Bird: Ends September 30th</li>
+              <li><b>$2,600</b> — Regular: Ends October 31st</li>
+              <li><b>$2,775</b> — Late: Ends November 20th</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Semi-private</span>
+            <h4>Family / Group of 3</h4>
+            <div class="price">$2,335–$2,665</div>
+            <div class="sub">Private room for 3 • one open bed • families or close groups</div>
+            <ul>
+              <li><b>$2,335</b> — Early Bird: Ends September 30th</li>
+              <li><b>$2,500</b> — Regular: Ends October 31st</li>
+              <li><b>$2,665</b> — Late: Ends November 20th</li>
+            </ul>
+          </div>
+
+          <div class="pkg" role="listitem">
+            <span class="tag">Full room</span>
+            <h4>Family / Group of 4</h4>
+            <div class="price">$2,240–$2,560</div>
+            <div class="sub">Full private 4-bed room • no shared beds • best value for groups</div>
+            <ul>
+              <li><b>$2,240</b> — Early Bird: Ends September 30th</li>
+              <li><b>$2,400</b> — Regular: Ends October 31st</li>
+              <li><b>$2,560</b> — Late: Ends November 20th</li>
             </ul>
           </div>
         </div>
+
         <div class="sep"></div>
       </div>
     </section>
@@ -628,8 +651,7 @@
         <div class="grid3" role="list">
           <div class="feature" role="listitem">
             <b>1) Reserve</b>
-            <p>Submit your booking request in under a minute. If you're still unsure, book a consultation completely free!
-              We'll confirm availability and next steps.</p>
+            <p>Submit your booking request in under a minute. If you're still unsure, book a consultation completely free! We'll confirm availability and next steps.</p>
           </div>
           <div class="feature" role="listitem">
             <b>2) Confirm</b>
